@@ -101,7 +101,7 @@ It requires system-level design, not just module assembly.
 
 ---
 
-## 11. Do you need an ESP32?
+## Do you need an ESP32?
 
 **Yes - two ESP32 boards are required.**
 

@@ -115,6 +115,6 @@ It requires system-level design, not just module assembly.
 
 ## Do you need an ESP32?
 
-**Yes - two ESP32 boards are required.**
+**Yes - actually two ESP32 boards**
 
 One ESP32 is used in the Hourglass Cube, and one is used in the Display Station to handle the display, sensors, and Wi-Fi connection to the phone.

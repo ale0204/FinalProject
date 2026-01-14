@@ -85,6 +85,7 @@ The Hourglass Cube and the Display Station must stay synchronized at all times u
 Shared radio management:
 Because the ESP32 has only one radio, ESP-NOW and Wi-Fi must be configured to operate on the same channel to avoid interference and communication drops.
 
+**The Display Station runs multiple concurrent tasks over a shared radio, similar to process scheduling in an operating system. Careful channel configuration avoids starving the ESP-NOW communication.**
 Together, these challenges require careful timing, filtering, and communication design, making this the most technically demanding part of the project.
 
 ---

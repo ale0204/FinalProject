@@ -72,9 +72,20 @@ The Display Station processes, stores, and presents this information.
 
 ## Q3 – What is the hardest technical problem?
 
-The hardest technical problem is:
+The hardest technical problem is ensuring reliable real-time interaction between a physical device and a distributed embedded system.
 
-**Reliable detection of cube orientation combined with low-latency wireless synchronization between two embedded devices and a phone interface.**
+This involves three key challenges:
+
+Reliable orientation detection:
+The IMU (MPU6050) produces noisy data, so the system must filter and debounce measurements to avoid false state changes when the cube is slightly moved or shaken.
+
+Low-latency wireless synchronization:
+The Hourglass Cube and the Display Station must stay synchronized at all times using ESP-NOW, even while the Display Station is also running a Wi-Fi web server for the phone interface.
+
+Shared radio management:
+Because the ESP32 has only one radio, ESP-NOW and Wi-Fi must be configured to operate on the same channel to avoid interference and communication drops.
+
+Together, these challenges require careful timing, filtering, and communication design, making this the most technically demanding part of the project.
 
 ---
 

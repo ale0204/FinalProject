@@ -13,7 +13,7 @@ Productivity Bloom is a standalone smart productivity device designed as a tangi
 
 Instead of relying on traditional mobile applications that can be easily ignored, this project encourages users to engage with their productivity in a concrete, meaningful way. The system allows users to configure Focus and Break cycles through a web interface hosted directly on the device. These cycles are then controlled through physical interaction with the cube, creating a direct connection between real-world actions and digital feedback.
 
-Progress is visualized through a virtual plant displayed on an integrated OLED screen. The plant grows when the user completes tasks consistently and withers when goals are not met, reinforcing accountability through a simple but powerful metaphor.
+Progress is visualized through a virtual plant displayed on the integrated OLED screen. The plant grows whenever the user completes tasks and stays consistent with their Focus cycles. If daily goals are not met, the plant withers as a natural consequence. To bring it back to life, the user must perform a deliberate physical action: opening a small door in the cube to reveal a hidden photoresistor and shining a strong light on it. This design ensures that recovery requires real-world effort rather than a simple digital reset, reinforcing accountability in a tangible and engaging way.
 
 ---
 
@@ -33,7 +33,7 @@ If the user does not complete all scheduled tasks for the current day, the virtu
 
 The entire system is built around a single ESP32 microcontroller that coordinates all hardware and software elements.
 
-The ESP32 DevKit acts as the central brain of the device. It manages Wi-Fi communication, hosts the web interface, processes sensor data, renders animations on the OLED display, and executes the internal state machine. Its dual-core architecture allows networking tasks to run in parallel with real-time graphics and sensor monitoring.
+The ESP32 acts as the central brain of the device. It manages Wi-Fi communication, hosts the web interface, processes sensor data, renders animations on the OLED display, and executes the internal state machine. Its dual-core architecture allows networking tasks to run in parallel with real-time graphics and sensor monitoring.
 
 An MPU6050 accelerometer and gyroscope module enables physical interaction with the cube. It detects orientation changes and allows the user to start or stop sessions simply by flipping the device.
 
@@ -55,6 +55,7 @@ The system is powered by a rechargeable Li-Po battery and a TP4056 charging modu
 | OLED Display 1.5" (128x128) | 1 | Main visual interface |
 | MPU6050 Sensor | 1 | Motion detection |
 | LDR Photoresistor | 1 | Light-based interaction |
+| Buzzer | 1 | Audio feedback to notify the user when a Focus or Break session ends |
 | Resistors | as needed | Exact quantity determined during prototyping |
 | Capacitors | as needed | For power stabilization |
 | Wires | as needed | Connections between components |
